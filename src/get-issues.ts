@@ -12,9 +12,18 @@ export async function get_issues(
       `?state=${state}`,
     {
       headers: {
-        Authorization: `Bearer: ${api_token}`,
+        Authorization: `token ${api_token}`,
       },
     }
   );
+  if (response.status != 200) {
+    throw new Error(
+      `GitHub API にアクセスできませんでした: ${JSON.stringify(
+        await response.json(),
+        null,
+        '  '
+      )}`
+    );
+  }
   return (await response.json()) as Issue[];
 }

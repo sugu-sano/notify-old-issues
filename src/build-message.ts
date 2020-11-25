@@ -24,6 +24,8 @@ export function build_message(
         ) +
         '[hr]\n'
     ) +
-    '[/info]'
+    '[/info]\n' +
+    '\n' +
+    'Powered by notify-old-issues https://github.com/sugu-sano/notify-old-issues'
   );
 }

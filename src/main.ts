@@ -31,9 +31,9 @@ async function main() {
       (i) => new Date(i.created_at) < expiry_date
     );
 
-    const chatwork_mapping =
-      (JSON.parse(actions.getInput('chatwork-mapping')) as ChatworkMapping) ||
-      args.chatwork_mapping;
+    const chatwork_mapping = JSON.parse(
+      actions.getInput('chatwork-mapping') || args.chatwork_mapping
+    ) as ChatworkMapping;
     console.table(
       `chatwork_mapping: ${JSON.stringify(chatwork_mapping, null, '  ')}`
     );

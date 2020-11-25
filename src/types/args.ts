@@ -1,4 +1,3 @@
-import { ChatworkMapping } from './chatwork-mapping';
 import { State } from './vendor';
 
 export type Args = {
@@ -7,5 +6,5 @@ export type Args = {
   valid_days: number;
   issue_state: State;
   chatwork_room_id: string | number;
-  chatwork_mapping: ChatworkMapping;
+  chatwork_mapping: string;
 };

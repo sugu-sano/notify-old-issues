@@ -7,6 +7,7 @@ const optionDefinitions: OptionDefinition[] = [
   { name: 'valid-days', type: String },
   { name: 'issue-state', type: String, defaultValue: 'open' },
   { name: 'chatwork-room-id', type: String },
+  { name: 'chatwork-mapping', type: String },
 ];
 
 export function get_args(): Args {
