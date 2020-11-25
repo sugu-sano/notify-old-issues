@@ -1,0 +1,35 @@
+import { AuthorAssociation } from './authorassociation';
+import { Label } from './label';
+import { Milestone } from './milestone';
+import { PullRequest } from './pullrequest';
+import { State } from './state';
+import { User } from './user';
+
+export type Issue = {
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  title: string;
+  user: User;
+  labels: Label[];
+  state: State;
+  locked: boolean;
+  assignee: User | null;
+  assignees: User[];
+  milestone: Milestone | null;
+  comments: number;
+  created_at: Date;
+  updated_at: Date;
+  closed_at: null;
+  author_association: AuthorAssociation;
+  active_lock_reason: null;
+  pull_request?: PullRequest;
+  body: string;
+  performed_via_github_app: null;
+};
