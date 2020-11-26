@@ -37,11 +37,11 @@ $ yarn build
 # 実行例
 $ node ./dist/index.js \
   # リポジトリのオーナー名
-  --owner i-mobile \
+  --owner microsoft \
   # リポジトリ名
-  --repository FurunaviTest \
+  --repository typescript \
   # issue の有効日数（これ以上経過したものを通知）
-  --valid-days 21 \
+  --valid-days 7 \
   # 取得するイシューの状態（open, closed, all から選択）
   --issue-state open \
   # 通知先の Chatwork ルーム ID
