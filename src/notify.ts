@@ -2,7 +2,7 @@ import { escape } from 'querystring';
 
 export async function notify(
   api_token: string,
-  room_id: string | number,
+  room_id: string,
   message: string,
   self_unread?: 0 | 1
 ): Promise<Response> {
