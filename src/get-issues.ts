@@ -13,6 +13,7 @@ export async function get_issues(
     {
       headers: {
         Authorization: `token ${api_token}`,
+        Accept: 'application/vnd.github.v3+json',
       },
     }
   );
