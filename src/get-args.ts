@@ -4,7 +4,7 @@ import { Args } from './types/args';
 const optionDefinitions: OptionDefinition[] = [
   { name: 'owner', type: String },
   { name: 'repository', type: String },
-  { name: 'valid-days', type: String },
+  { name: 'valid-days', type: Number },
   { name: 'issue-state', type: String, defaultValue: 'open' },
   { name: 'chatwork-room-id', type: String },
   { name: 'chatwork-mapping', type: String },

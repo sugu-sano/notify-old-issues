@@ -5,6 +5,6 @@ export type Args = {
   repository: string;
   valid_days: number;
   issue_state: State;
-  chatwork_room_id: string | number;
+  chatwork_room_id: string;
   chatwork_mapping: string;
 };
