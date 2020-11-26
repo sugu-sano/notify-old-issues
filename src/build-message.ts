@@ -20,7 +20,8 @@ export function build_message(
           (i) =>
             `title: ${i.title}\n` +
             `html_url: ${i.html_url}\n` +
-            `created_at: ${i.created_at.toString()}\n`
+            `created_at: ${i.created_at.toString()}\n` +
+            '\n'
         ) +
         '[hr]\n'
     ) +
