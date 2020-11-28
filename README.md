@@ -85,7 +85,7 @@ jobs:
             --chatwork-mapping '{ "sugu-sano": "[To: ] 佐野", "gonbe-nanashi": "[To: ] 名無しさん" }'
     env:
       GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      CHATWORK_API_TOKEN: ${{ secrets.FURUNAVI_BOT_CHATWORK_API_TOKEN }}
+      CHATWORK_API_TOKEN: ${{ secrets.CHATWORK_API_TOKEN }}
 ```
 
 ## TODO
