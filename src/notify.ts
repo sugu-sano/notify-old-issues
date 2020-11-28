@@ -1,4 +1,5 @@
 import { escape } from 'querystring';
+import fetch from 'isomorphic-unfetch'
 
 export async function notify(
   api_token: string,
