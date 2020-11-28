@@ -23,13 +23,6 @@ async function main() {
       args.issue_state
     );
 
-    if (issues.length === 0) {
-      const msg = `${args.valid_days} 日以上経過した issue はありませんでした。`;
-      notify(process.env.CHATWORK_API_TOKEN, args.chatwork_room_id, msg);
-      console.log(msg);
-      return;
-    }
-
     console.log(
       `fetched issues: ${JSON.stringify(
         issues.map((i) => ({
@@ -48,6 +41,13 @@ async function main() {
     const expired_issues = issues.filter(
       (i) => new Date(i.created_at) < expiry_date
     );
+
+    if (expired_issues.length === 0) {
+      const msg = `${args.valid_days} 日以上経過した issue はありませんでした。`;
+      notify(process.env.CHATWORK_API_TOKEN, args.chatwork_room_id, msg);
+      console.log(msg);
+      return;
+    }
 
     const chatwork_mapping = JSON.parse(
       actions.getInput('chatwork-mapping') || args.chatwork_mapping
