@@ -37,15 +37,15 @@ $ yarn build
 # 実行例
 $ node ./dist/index.js \
   # リポジトリのオーナー名
-  --owner i-mobile \
+  --owner microsoft \
   # リポジトリ名
-  --repository FurunaviTest \
+  --repository typescript \
   # issue の有効日数（これ以上経過したものを通知）
-  --valid-days 21
+  --valid-days 7 \
   # 取得するイシューの状態（open, closed, all から選択）
-  --issue-state open
+  --issue-state open \
   # 通知先の Chatwork ルーム ID
-  --chatwork-room-id: 173086197
+  --chatwork-room-id: 173086197 \
   # 以下はGitHub Actionsで設定する場合不要
   # GitHub のユーザ名と通知先の Chatwotk メンションをマッピングする
   --chatwork-mapping '{ "sugu-sano": "[To: ] 佐野", "gonbe-nanashi": "[To: ] 名無しさん" }'
@@ -93,8 +93,8 @@ jobs:
 
 ## TODO
 
-- HTTPリクエストを [octokit/rest.js](https://github.com/octokit/rest.js) に変更する
-- テスト用のCIを組む
+- HTTP リクエストを [octokit/rest.js](https://github.com/octokit/rest.js) に変更する
+- テスト用の CI を組む
 
 ## Author
 

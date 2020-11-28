@@ -21,10 +21,13 @@ export function build_message(
             acc +
             `title: ${cur.title}\n` +
             `html_url: ${cur.html_url}\n` +
-            `created_at: ${cur.created_at.toString()}\n`
+            `created_at: ${cur.created_at.toString()}\n` +
+            '\n'
         , "") +
         '[hr]\n'
     ) +
-    '[/info]'
+    '[/info]\n' +
+    '\n' +
+    'Powered by notify-old-issues https://github.com/sugu-sano/notify-old-issues'
   );
 }
