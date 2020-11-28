@@ -51,46 +51,6 @@ $ node ./dist/index.js \
   --chatwork-mapping '{ "sugu-sano": "[To: ] 佐野", "gonbe-nanashi": "[To: ] 名無しさん" }'
 ```
 
-## GitHub Actions Sample
-
-```yaml
-name: workflow
-on:
-  schedule:
-    # 毎週水曜日の１３時に実行
-    - cron '0 13 * * 3'
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: main
-      - name: Insatll
-        run: yarn install
-      - name: Get expired issues and Notify
-        with:
-          # 実際に使う際には GitHub Actions で上書きしてください
-          chatwork-mapping: |
-            {
-              "sugu-sano": "[To: ] 佐野"
-            }
-        # 実際に使用する際にはコマンドライン引数を設定して下さい
-        run: |
-          node ./dist/index.js \
-           --owner REPOSITORY_OWNER_NAME \
-           --repository REPOSITORY_NAME \
-           --valid-days VALID_DAYS \
-           --issue-state STATE \
-           --chatwork-room-id CHATWORK_ROOM_ID
-    env:
-      GITHUB_API_TOKEN: ${{ secrets.GITHUB_API_TOKEN }}
-      CHATWORK_API_TOKEN: ${{ secrets.CHATWORK_API_TOKEN }}
-```
-
 ## TODO
 
 - HTTP リクエストを [octokit/rest.js](https://github.com/octokit/rest.js) に変更する
