@@ -44,7 +44,7 @@ async function main() {
 
     if (expired_issues.length === 0) {
       const msg = `${args.valid_days} 日以上経過した issue はありませんでした。`;
-      notify(process.env.CHATWORK_API_TOKEN, args.chatwork_room_id, msg);
+      await notify(process.env.CHATWORK_API_TOKEN, args.chatwork_room_id, msg);
       console.log(msg);
       return;
     }
@@ -74,7 +74,7 @@ async function main() {
     const msg = `$GitHub の古い issue 通知 でエラーが発生しました。\n${
       (error as Error).stack
     }\n`;
-    notify(process.env.CHATWORK_API_TOKEN, args.chatwork_room_id, msg);
+    await notify(process.env.CHATWORK_API_TOKEN, args.chatwork_room_id, msg);
     console.error(msg);
     throw error;
   }
