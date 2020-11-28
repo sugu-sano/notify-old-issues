@@ -16,12 +16,13 @@ export function build_message(
     Object.entries(group_by(expired_issues, (i) => i.user.login)).map(
       ([user, issues]) =>
         `${get_chatwotk_name(mapping, user)}\n` +
-        issues.map(
-          (i) =>
-            `title: ${i.title}\n` +
-            `html_url: ${i.html_url}\n` +
-            `created_at: ${i.created_at.toString()}\n`
-        ) +
+        issues.reduce(
+          (acc, cur) =>
+            acc +
+            `title: ${cur.title}\n` +
+            `html_url: ${cur.html_url}\n` +
+            `created_at: ${cur.created_at.toString()}\n`
+        , "") +
         '[hr]\n'
     ) +
     '[/info]'
