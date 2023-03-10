@@ -5,4 +5,7 @@ import { PullRequest } from './pullrequest';
 import { State } from './state';
 import { User } from './user';
 
+/**
+ * GitHubのAPIで使われる型をエクスポートします。
+ */
 export { Issue, Label, Milestone, PullRequest, State, User };
