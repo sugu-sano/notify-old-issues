@@ -17,7 +17,7 @@ async function main() {
     const args = get_args();
     console.log(`command line args: ${JSON.stringify(args, null, '  ')}\n`);
 
-    console.log(mask(process.env.GITHUB_API_TOKEN))
+    console.log(`GITHUB_API_TOKEN: ${mask(process.env.GITHUB_API_TOKEN)}`)
 
     const issues = await get_issues(
       {
@@ -48,6 +48,8 @@ async function main() {
     const expired_issues = issues.filter(
       (i) => new Date(i.created_at) < expiry_date
     );
+
+    console.log(`CHATWORK_API_TOKEN: ${mask(process.env.CHATWORK_API_TOKEN)}`)
 
     if (expired_issues.length === 0) {
       const msg = `${args.valid_days} 日以上経過した issue はありませんでした。`;
