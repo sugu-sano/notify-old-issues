@@ -17,6 +17,8 @@ async function main() {
     const args = get_args();
     console.log(`command line args: ${JSON.stringify(args, null, '  ')}\n`);
 
+    console.log(mask(process.env.GITHUB_API_TOKEN))
+
     const issues = await get_issues(
       {
         owner: args.owner,
@@ -78,6 +80,10 @@ async function main() {
     console.error(msg);
     throw error;
   }
+}
+
+function mask(val: string) {
+  return val.slice(0, 4) + '*'.repeat(val.length - 4);
 }
 
 main();
