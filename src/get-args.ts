@@ -8,5 +8,13 @@ import { Args } from './types/args';
  * @returns 引数のオブジェクト
  */
 export function get_args(): Args {
-  return commandLineArgs(optionDefinitions) as Args;
+  const parsedArgs = commandLineArgs(optionDefinitions);
+  return {
+    owner: parsedArgs['owner'],
+    repository: parsedArgs['repository'],
+    valid_days: parsedArgs['valid-days'],
+    issue_state: parsedArgs['issue-state'],
+    chatwork_room_id: parsedArgs['chatwork-room-id'],
+    chatwork_mapping: parsedArgs['chatwork-mapping']
+  }
 }
