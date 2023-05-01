@@ -16,5 +16,5 @@ export function get_chatwotk_name(
   mapping: ChatworkMapping,
   github_user_name: string
 ): string {
-  return mapping[github_user_name] ?? DEFAULT_MESSAGE;
+  return mapping[github_user_name] ?? (`${DEFAULT_MESSAGE}: ${github_user_name}`);
 }
