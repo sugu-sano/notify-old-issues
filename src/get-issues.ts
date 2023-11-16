@@ -44,7 +44,7 @@ export async function get_issues(
  * @returns URL文字列
  */
 function build_url(options: GetIssuesOptions): string {
-  return `${BASE_URL}/${options.owner}/${options.repository}/issues?state=${options.state}`;
+  return `${BASE_URL}/${options.owner}/${options.repository}/issues?state=${options.state}&per_page=100`;
 }
 
 /**
